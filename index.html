@@ -202,10 +202,10 @@
 
       <div class="body-wrap">
   
-    <article id="post-test 0" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-can&#39;t add self as subview" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/25/test 0/" class="article-date">
+      <a href="/2016/04/25/can't add self as subview/" class="article-date">
   	<time datetime="2016-04-25T09:57:11.000Z" itemprop="datePublished">2016-04-25</time>
 </a>
     </div>
@@ -219,7 +219,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/25/test 0/">iOS 系统的 bug, can&#39;t add self as subview</a>
+      <a class="article-title" href="/2016/04/25/can't add self as subview/">iOS 系统的 bug, can&#39;t add self as subview</a>
     </h1>
   
 
@@ -230,7 +230,7 @@
       
         <p>​ 当用户量达到数百万以上之后,  我们的 app 会显现出很多未曾显现的 bug ,  其中最让我印象深刻的,  就是 can’t add self as subview ,  app 直接 crash</p>
 <h5 id="异常描述和崩溃堆栈是这样的："><a href="#异常描述和崩溃堆栈是这样的：" class="headerlink" title="异常描述和崩溃堆栈是这样的："></a>异常描述和崩溃堆栈是这样的：</h5><p><code>Terminating app due to uncaught exception &#39;NSInvalidArgumentException&#39;, reason: &#39;Can&#39;t add self as subview</code></p>
-<p>​ 最初统计的时候 只有 iOS7 有这个 bug, crash 率高达 千分之一, 而 Stack Overflow 上大多数开发者一致认为这是 iOS7 的 bug. 但是最近 友盟统计bug 已经统计到 iOS8 和 iOS9 , 醉了 iOS 药丸</p>
+<p> 最初统计的时候 只有 iOS7 有这个 bug, crash 率高达 千分之一, 而 Stack Overflow 上大多数开发者一致认为这是 iOS7 的 bug. 但是最近 友盟统计bug 已经统计到 iOS8 和 iOS9 ,   iOS 药丸.</p>
 <h5 id="附上我的解决方案"><a href="#附上我的解决方案" class="headerlink" title="附上我的解决方案"></a>附上我的解决方案</h5><p><a href="https://github.com/simplecode-k/SafeTransition" target="_blank" rel="external">https://github.com/simplecode-k/SafeTransition</a></p>
 <p>​ 考虑到不污染现有代码结构,  为了最小化对项目的影响,  决定利用 xcode 编译时 会加载每个类 + load 方法的特性, 使用 Method Swizzling , Associated Objects 对系统的 push 和 pop 做一个安全限制</p>
 <p>最初的版本有头文件的, 是空的 但也一直留着, 现在去掉了, 只留下一个 .m</p>
